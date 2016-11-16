@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Xinity</title>
+
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="theme-color" content="#ddd" />
+
+        <link rel="shortcut icon" type="image/x-icon" href="content/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="content/favicon.ico" />
+
+        <link rel="stylesheet" media="screen" href="content/css/bootstrap.min.css" />
+        <link rel="stylesheet" media="screen" href="content/css/font-awesome.min.css" />
+        <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,400italic,900|Baloo+Chettan" />
+
+        <link rel="stylesheet" media="screen" href="content/css/styles.css" />
+
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body ng-app="xinity" id="app-theme" class="theme-dark">
+        <ui-view class="main-view"></ui-view>
+
+        <!-- libs -->
+        <script src="content/js/jquery-3.1.0.min.js"></script>
+        <script src="content/js/bootstrap.min.js"></script>
+
+        <!-- midi.js polyfill -->
+        <script src="content/js/midi-js/inc/shim/Base64.js"></script>
+        <script src="content/js/midi-js/inc/shim/Base64binary.js"></script>
+        <script src="content/js/midi-js/inc/shim/WebAudioAPI.js"></script>
+
+        <!-- midi.js -->
+        <script src="content/js/midi-js/midi.min.js"></script>
+
+        <!-- midi.js utils -->
+        <script src="content/js/midi-js/util/dom_request_xhr.js"></script>
+        <script src="content/js/midi-js/util/dom_request_script.js"></script>
+
+        <script>
+            MIDI.loadPlugin({
+                soundfontUrl: "content/js/midi-js/inc/", //"http://gleitz.github.io/midi-js-soundfonts/MusyngKite/",
+                instrument: "acoustic_grand_piano",
+                onsuccess: function() {
+                    console.log("Midi.js loaded!");
+                }
+            });
+        </script>
+
+        <!-- angular.js -->
+        <script src="content/js/angular.min.js"></script>
+        <script src="content/js/angular-cookies.min.js"></script>
+        <script src="content/js/angular-ui-router.min.js"></script>
+
+        <!-- xinity -->
+        <script src="app/app.js"></script>
+
+        <!-- xinity components -->
+        <script src="app/login/login.component.js"></script>
+        <script src="app/workbench/workbench.component.js"></script>
+        <script src="app/dashboard/dashboard.component.js"></script>
+        <script src="app/command-line/command-line.component.js"></script>
+        <script src="app/practice-schedules/practice-schedules.component.js"></script>
+    </body>
+</html>

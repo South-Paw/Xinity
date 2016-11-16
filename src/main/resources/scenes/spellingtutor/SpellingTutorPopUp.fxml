@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import org.controlsfx.control.CheckComboBox?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="184.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.spellingtutor.SpellingTutorPopUpController">
+    <children>
+        <TextField fx:id="numberOfQuestionsField" layoutX="158.0" layoutY="12.0" minWidth="100.0" prefHeight="25.0" prefWidth="150.0" text="1" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0" />
+        <Button fx:id="startTestButton" layoutX="160.0" layoutY="147.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="69.0" text="Start" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="160.0" />
+        <Text layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Questions" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="17.0" />
+        <Button fx:id="cancelButton" layoutX="269.0" layoutY="93.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="69.0" text="Cancel" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="12.0" />
+        <Text fx:id="invalidValueText" disable="true" fill="#e80404" layoutX="14.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Text>
+        <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chord Constraints" />
+        <CheckComboBox fx:id="chordConstraintDropDown" layoutX="158.0" layoutY="46.0" prefWidth="150.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="46.0">
+        </CheckComboBox>
+      <CheckBox fx:id="noEnharmonicsCheckBox" layoutX="14.0" layoutY="82.0" mnemonicParsing="false" text="No Enharmonics" />
+      <CheckBox fx:id="randomNotesCheckBox" layoutX="14.0" layoutY="113.0" mnemonicParsing="false" text="Random Notes" />
+    </children>
+</AnchorPane>

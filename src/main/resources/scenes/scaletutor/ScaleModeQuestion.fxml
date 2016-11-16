@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.scaletutor.ScaleQuestionController">
+    <children>
+        <AnchorPane layoutX="3.0" layoutY="3.0" prefHeight="40.0" prefWidth="534.0" style="-fx-border-color: rgba(0,0,0,0.3); -fx-border-style: solid; fx-border-radius: 2; -fx-border-width: 1;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+            <children>
+                <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="76.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" vgrow="NEVER" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Text fx:id="testNumberText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="67.0" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </GridPane.margin>
+                        </Text>
+                        <TextField fx:id="answerInput" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <Button fx:id="checkAnswerButton" mnemonicParsing="false" onAction="#checkButtonPressed" text="Check" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Text fx:id="questionText" strokeType="OUTSIDE" strokeWidth="0.0" translateX="6.0" wrappingWidth="400.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </GridPane.margin>
+                        </Text>
+                        <Text fx:id="answerText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="67.0" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </GridPane.margin>
+                        </Text>
+                        <Text fx:id="giveAnswerText" strokeType="OUTSIDE" strokeWidth="0.0" translateX="6.0" wrappingWidth="400.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                            <font>
+                                <Font name="System Italic" size="13.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </GridPane.margin>
+                        </Text>
+                        <Button fx:id="nextButton" disable="true" mnemonicParsing="false" onAction="#nextButtonPressed" text="Next" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                            <GridPane.margin>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </GridPane.margin>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Answer" textAlignment="RIGHT" wrappingWidth="67.0" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                            <GridPane.margin>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </GridPane.margin>
+                        </Text>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

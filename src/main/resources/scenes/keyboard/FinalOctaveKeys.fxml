@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.keyboard.OneOctaveKeysController">
+    <children>
+        <Rectangle fx:id="ckey" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="350.0" onMousePressed="#pianoKeyPressed" onMouseReleased="#pianoKeyReleased" stroke="BLACK" strokeType="INSIDE" userData="C" width="75.0" />
+        <Rectangle fx:id="dkey" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="350.0" layoutX="75.0" onMousePressed="#pianoKeyPressed" onMouseReleased="#pianoKeyReleased" stroke="BLACK" strokeType="INSIDE" userData="D" width="75.0" />
+        <Rectangle fx:id="ekey" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="350.0" layoutX="150.0" onMousePressed="#pianoKeyPressed" onMouseReleased="#pianoKeyReleased" stroke="BLACK" strokeType="INSIDE" userData="E" width="75.0" />
+        <Rectangle fx:id="fkey" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="350.0" layoutX="225.0" onMousePressed="#pianoKeyPressed" onMouseReleased="#pianoKeyReleased" stroke="BLACK" strokeType="INSIDE" userData="F" width="75.0" />
+        <Rectangle fx:id="gkey" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="350.0" layoutX="300.0" onMousePressed="#pianoKeyPressed" onMouseReleased="#pianoKeyReleased" stroke="BLACK" strokeType="INSIDE" userData="G" width="75.0" />
+        <Rectangle fx:id="csharpKey" arcHeight="5.0" arcWidth="5.0" height="250.0" layoutX="50.0" onMousePressed="#pianoKeyPressed" onMouseReleased="#pianoKeyReleased" stroke="BLACK" strokeType="INSIDE" userData="C#" width="50.0" />
+        <Rectangle fx:id="dsharpKey" arcHeight="5.0" arcWidth="5.0" height="250.0" layoutX="125.0" onMousePressed="#pianoKeyPressed" onMouseReleased="#pianoKeyReleased" stroke="BLACK" strokeType="INSIDE" userData="D#" width="50.0" />
+        <Rectangle fx:id="fsharpKey" arcHeight="5.0" arcWidth="5.0" height="250.0" layoutX="275.0" onMousePressed="#pianoKeyPressed" onMouseReleased="#pianoKeyReleased" stroke="BLACK" strokeType="INSIDE" userData="F#" width="50.0" />
+        <Text fx:id="ckeyText" layoutY="330.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="75.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <Text fx:id="dkeyText" layoutX="75.0" layoutY="329.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="75.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <Text fx:id="ekeyText" layoutX="150.0" layoutY="329.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="75.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <Text fx:id="fkeyText" layoutX="225.0" layoutY="329.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="75.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <Text fx:id="gkeyText" layoutX="300.0" layoutY="329.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="75.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <Text fx:id="csharpKeyText" fill="WHITE" layoutX="50.0" layoutY="232.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="50.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <Text fx:id="dsharpKeyText" fill="WHITE" layoutX="125.0" layoutY="231.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="50.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <Text fx:id="fsharpKeyText" fill="WHITE" layoutX="275.0" layoutY="231.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="50.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

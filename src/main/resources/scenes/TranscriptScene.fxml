@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.TranscriptSceneController">
+    <children>
+        <SplitMenuButton fx:id="runButton" disable="true" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" onAction="#runButton" prefWidth="102.0" text="Run All" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="12.0">
+            <items>
+                <MenuItem fx:id="runAllSelect" mnemonicParsing="false" onAction="#selectRunAllButton" text="Run All" />
+                <MenuItem fx:id="runOneSelect" mnemonicParsing="false" onAction="#selectRunOneButton" text="Run One" />
+            </items>
+        </SplitMenuButton>
+        <Label fx:id="commandCountLabel" layoutX="150.0" layoutY="17.0" prefHeight="15.0" prefWidth="331.0" AnchorPane.leftAnchor="122.0" AnchorPane.topAnchor="17.0" />
+        <Button fx:id="restartButton" disable="true" layoutX="462.0" layoutY="12.0" mnemonicParsing="false" onAction="#restartButton" text="Restart" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="12.0" />
+        <Button fx:id="clearButton" layoutX="536.0" layoutY="12.0" mnemonicParsing="false" onAction="#clearTranscriptButton" text="Clear" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0" />
+
+        <TextArea fx:id="transcriptArea" editable="false" layoutX="8.0" layoutY="9.0" prefHeight="419.0" prefWidth="584.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="48.0" />
+        <TextField fx:id="inputField" layoutX="8.0" layoutY="434.0" onKeyPressed="#handleKeyEvent" prefHeight="28.0" prefWidth="500.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="96.0" />
+        <Button fx:id="executeButton" layoutX="515.0" layoutY="434.0" mnemonicParsing="false" onAction="#executeButtonPressed" prefHeight="28.0" text="Execute" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="12.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

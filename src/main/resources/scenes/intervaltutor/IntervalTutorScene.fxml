@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.intervaltutor.IntervalTutorSceneController">
+    <children>
+        <AnchorPane prefHeight="440.0" prefWidth="576.0" style="-fx-border-color: rgba(0,0,0,0.3); -fx-border-style: solid; -fx-border-width: 1; -fx-border-radius: 2;" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
+            <children>
+                <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="44.0" minHeight="44.0" prefHeight="44.0" style="-fx-border-color: rgba(0,0,0,0.3); -fx-border-style: solid; -fx-border-radius: 2; -fx-border-width: 1;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+                    <children>
+                        <Text fx:id="testStatusTextField" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                    </children>
+                </AnchorPane>
+                <ScrollPane fx:id="testScrollPane" layoutX="10.0" layoutY="62.0" prefHeight="316.0" prefWidth="558.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="60.0" />
+                <AnchorPane layoutY="396.0" maxHeight="44.0" minHeight="44.0" prefHeight="44.0" style="-fx-border-color: rgba(0,0,0,0.3); -fx-border-style: solid; -fx-border-radius: 2; -fx-border-width: 1;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                    <children>
+                        <Text fx:id="testResultsTextField" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <Button fx:id="createTestButton" layoutX="12.0" layoutY="460.0" mnemonicParsing="false" onAction="#createTestButtonPressed" prefHeight="28.0" text="Create Test" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" />
+        <Button fx:id="endTestButton" disable="true" layoutX="106.0" layoutY="460.0" mnemonicParsing="false" onAction="#endTestButtonPressed" prefHeight="28.0" text="End Test" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="114.0" />
+        <Button fx:id="retryTestsButton" disable="true" layoutX="189.0" layoutY="460.0" mnemonicParsing="false" onAction="#retryTestsButtonPressed" prefHeight="28.0" text="Retry Tests" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="197.0" />
+        <Button fx:id="resetButton" disable="true" layoutX="494.0" layoutY="462.0" mnemonicParsing="false" onAction="#resetButtonPressed" prefHeight="28.0" text="Reset" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="12.0" />
+    </children>
+</AnchorPane>

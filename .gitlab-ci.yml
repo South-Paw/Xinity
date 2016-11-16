@@ -1,0 +1,16 @@
+before_script:
+  - export PATH=/opt/apache-maven-3.3.9/bin:$PATH
+junit:
+  stage: test
+  script:
+    - mvn -B clean test
+
+cucumber:
+  stage: test
+  script:
+    - mvn -Dtest=stepdefinitions/RunCucumberTests test
+
+generate_artifacts:
+  stage: deploy
+  script:
+    - mvn -B clean site package -e

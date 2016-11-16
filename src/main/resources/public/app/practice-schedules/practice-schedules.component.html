@@ -1,0 +1,212 @@
+<div id="practice-schedules-root">
+    <div id="schedule-controls" class="toolbar">
+        <ul class="toolbar-left">
+            <li><a ng-click="createSchedule()"><i class="fa fa-fw fa-plus"></i> Create Schedule</a></li>
+        </ul>
+    </div>
+
+    <div id="schedule-list">
+        <table class="table">
+            <tbody>
+                <tr ng-show="loading">
+                    <td class="info-td"><i class="fa fa-fw fa-spinner fa-spin fa-3x"></i></td>
+                </tr>
+
+                <tr ng-show="!loading && (scheduleList === undefined || scheduleList.length === 0)">
+                    <td class="info-td"><strong>No schedules found.</strong></td>
+                </tr>
+
+                <tr ng-repeat="schedule in scheduleList">
+                    <td class="name"><span>{{ schedule.name }}</span></td>
+                    <td class="qnum hidden-xs">{{ schedule.qnum }} Questions</td>
+                    <td class="controls">
+                        <a ng-click="deleteThisSchedule(schedule.name, schedule.id)" class="btn btn-sm btn-default"><i class="fa fa-fw fa-trash-o"></i></a>&nbsp;
+                        <a ng-click="editThisSchedule(schedule.id);" class="btn btn-sm btn-default"><i class="fa fa-fw fa-pencil"></i><span class="hidden-xs"> Edit</span></a>&nbsp;
+                        <a ng-click="playSchedule(schedule.id);" class="btn btn-sm btn-xinity"><i class="fa fa-fw fa-play"></i><span class="hidden-xs"> Run</span></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Add modal -->
+<div class="modal fade" id="addScheduleModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Create Schedule</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" ng-show="submissionError">
+                    <div class="errors text-danger"><i class="fa fa-fw fa-exclamation-triangle"></i> {{ submissionError }}</div>
+                </div>
+
+                <form class="form-horizontal">
+                    <div id="newScheduleSettings">
+                        <div class="form-group">
+                            <label for="newScheduleName" class="col-sm-3 control-label">Name</label>
+                            <div class="col-sm-9">
+                                <input id="newScheduleName" class="form-control" type="text" ng-model="newSchedule.name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newScheduleDifficulty" class="col-sm-3 control-label">Difficulty</label>
+                            <div class="col-sm-4">
+                                <select id="newScheduleDifficulty" class="form-control" type="text" ng-model="newSchedule.difficulty">
+                                    <option value="normal">Normal</option>
+                                    <option value="hard">Hard</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">
+                            <label for="newScheduleTempo" class="col-sm-3 control-label">Tempo</label>
+                            <div class="col-sm-4">
+                                <input id="newScheduleTempo" class="form-control" type="number" ng-model="newSchedule.tempo">
+                            </div>
+                        </div>-->
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Order</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox"><label><input type="checkbox" value="random" ng-model="newSchedule.random"> Randomize Question Order</label></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="newScheduleQuestions"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group dropup pull-left">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Question <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="addScheduleNewQuestion('chord');">Chord</a></li>
+                        <li><a ng-click="addScheduleNewQuestion('interval');">Interval</a></li>
+                        <li><a ng-click="addScheduleNewQuestion('note');">Note</a></li>
+                        <li><a ng-click="addScheduleNewQuestion('scale');">Scale</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-default" ng-click="cancelNewSchedule()">Close</button>
+                <button type="button" class="btn btn-xinity" id="saveNewScheduleButton" ng-click="saveNewSchedule()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit modal -->
+<div class="modal fade" id="editScheduleModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Schedule</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" ng-show="editSubmissionError">
+                    <div class="errors text-danger"><i class="fa fa-fw fa-exclamation-triangle"></i> {{ editSubmissionError }}</div>
+                </div>
+
+                <form class="form-horizontal">
+                    <div id="editScheduleSettings">
+                        <div class="form-group">
+                            <label for="editScheduleName" class="col-sm-3 control-label">Name</label>
+                            <div class="col-sm-9">
+                                <input id="editScheduleName" class="form-control" type="text" ng-model="editSchedule.name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="editScheduleDifficulty" class="col-sm-3 control-label">Difficulty</label>
+                            <div class="col-sm-4">
+                                <select id="editScheduleDifficulty" class="form-control" type="text" ng-model="editSchedule.difficulty">
+                                    <option value="normal">Normal</option>
+                                    <option value="hard">Hard</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">
+                            <label for="editScheduleTempo" class="col-sm-3 control-label">Tempo</label>
+                            <div class="col-sm-4">
+                                <input id="editScheduleTempo" class="form-control" type="number" ng-model="editSchedule.tempo">
+                            </div>
+                        </div>-->
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Order</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox"><label><input id="editScheduleRandom" type="checkbox" value="random" ng-model="editSchedule.random"> Randomize Question Order</label></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="editScheduleQuestions"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group dropup pull-left">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Question <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="editScheduleNewQuestion('chord');">Chord</a></li>
+                        <li><a ng-click="editScheduleNewQuestion('interval');">Interval</a></li>
+                        <li><a ng-click="editScheduleNewQuestion('note');">Note</a></li>
+                        <li><a ng-click="editScheduleNewQuestion('scale');">Scale</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-default" ng-click="cancelEditSchedule()">Close</button>
+                <button type="button" class="btn btn-xinity" id="saveEditScheduleButton" ng-click="saveEditSchedule()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Play modal -->
+<div class="modal fade" id="playScheduleModal" tabindex="-1" role="dialog" data-backdrop="static">
+    <div class="playScheduleTop">
+        <div id="scheduleDetails"><span id="scheduleName">"Easy Schedule 1"</span><br><span id="scheduleProgress">Question 4 of 30</span><br><span id="scheduleQuestionType"></span></div>
+        <button id="scheduleClose" type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+    </div>
+
+    <div class="modal-dialog">
+        <div id="playScheduleLoading" ng-show="playScheduleIsLoading">
+            <i class="fa fa-fw fa-spinner fa-spin fa-3x"></i>
+        </div>
+
+        <div class="modal-content" id="playScheduleContent" ng-show="!playScheduleIsLoading && !showResults">
+
+            <div id="scheduleQuestionArea">
+                <h2 id="scheduleQuestion"></h2>
+                <div id="hintArea">
+                    <a class="btn btn-xs btn-default" ng-click="isHintShown = true;" ng-show="!isHintShown">Show Hint...</a>
+                    <div id="scheduleHint" ng-show="isHintShown"></div>
+                </div>
+                <div class="listenToAnswerArea">
+                    <a id="answerButton" class="btn btn-xinity" ng-click="playAnswer();">Listen to Answer</a>
+                </div>
+            </div>
+
+            <div id="scheduleAnswer">
+                <h4 id="ratingQuestionText"></h4>
+                <ul class="rating">
+                    <li><a id="star1" class="star" ng-click="giveResult(1);"><i class="fa fa-fw fa-star-o"></i></a></li>
+                    <li><a id="star2" class="star" ng-click="giveResult(2);"><i class="fa fa-fw fa-star-o"></i></a></li>
+                    <li><a id="star3" class="star" ng-click="giveResult(3);"><i class="fa fa-fw fa-star-o"></i></a></li>
+                    <li><a id="star4" class="star" ng-click="giveResult(4);"><i class="fa fa-fw fa-star-o"></i></a></li>
+                    <li><a id="star5" class="star" ng-click="giveResult(5);"><i class="fa fa-fw fa-star-o"></i></a></li>
+                </ul>
+                <div id="ratingText"></div>
+            </div>
+
+        </div>
+
+        <div class="modal-content" id="playScheduleResults" ng-show="!playScheduleIsLoading && showResults">
+            <div id="scheduleResultTable"></div>
+            <div id="scheduleResultActions">
+                <button id="discardSchedule" type="button" class="btn btn-sm btn-danger" ng-click="discardScheduleResults();">Discard</button>
+                <button id="saveSchedule" type="button" class="btn btn-sm btn-xinity" ng-click="saveScheduleResults();">Save Results</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="playScheduleBottom">
+        <!--<button id="scheduleSkip" type="button" class="btn btn-default">Skip Question</button>-->
+        <button id="scheduleNext" type="button" class="btn btn-xinity" ng-click="loadQuestion();">Next Question <i class="fa fa-fw fa-arrow-right"></i></button>
+        <button id="scheduleDone" type="button" class="btn btn-success" ng-click="finishSchedule();">Finish Schedule <i class="fa fa-fw fa-check"></i></button>
+    </div>
+</div>

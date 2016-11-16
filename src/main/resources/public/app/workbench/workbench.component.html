@@ -1,0 +1,181 @@
+<div id="app-sidebar" ng-show="!loading">
+    <div class="app-logo hidden-xs">
+        <div class="xinity-logo xinity-logo-alt">X</div>
+    </div>
+    <ul id="app-nav">
+        <li ng-repeat="module in sidebarItems">
+            <a ui-sref-active="active" ui-sref="{{ module.sref }}" ng-click="hideSidebarIfMobile()">
+                <i class="fa fa-fw fa-{{ module.icon }}"></i>
+                <span>{{ module.title }}</span>
+            </a>
+        </li>
+    </ul>
+    <div id="app-user" ng-show="user">
+        <div class="user-icon">
+            <a ng-click="showProfile()">
+                <img id="user-profile-icon" src="content/img/user_{{ user.imgUrl }}.png" alt="{{ user.username }}'s Profile Picture" />
+            </a>
+        </div>
+        <div class="user-actions">
+            <a class="settings" ng-click="showSettings()"><i class="fa fa-fw fa-cogs"></i></a>
+            <a class="logout" ng-click="doLogout()"><i class="fa fa-fw fa-sign-out"></i></a>
+        </div>
+    </div>
+</div>
+
+<div id="app-topbar">
+    <ul class="toolbar toolbar-left">
+        <!-- Hide toolbar -->
+        <li><a ng-click="hideSidebar()"><i class="fa fa-fw fa-bars"></i></a></li>
+        <!-- Open keyboard
+        <li><a href="#"><i class="fa fa-fw fa-keyboard-o"></i></a></li>-->
+    </ul>
+
+    <!--
+    <ul class="toolbar toolbar-right">
+        <!-- Notifications
+        <li><a href="#"><i class="fa fa-fw fa-bell-o"></i></a></li>
+        <!-- Application theme
+        <li><a ng-click="switchTheme()"><i class="fa fa-fw fa-paint-brush"></i></a></li>
+        <!-- Lock application
+        <li><a href="#"><i class="fa fa-fw fa-lock"></i></a></li>
+    </ul>
+    -->
+
+    <div class="xinity-logo xinity-logo-full visible-xs">Xinity</div>
+</div>
+
+<div id="app-view">
+    <ui-view></ui-view>
+</div>
+
+<!-- Profile modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="profile-picture">
+                    <img src="content/img/user_{{ user.imgUrl }}.png" />
+                </div>
+                <div class="profile-header">
+                    <h4>{{ user.username }}</h4>
+                </div>
+                <div class="profile-info">
+                    <p ng-show="user.name"><strong>Name:</strong> {{ user.name }}</p>
+                    <p ng-show="user.email"><strong>Email:</strong> {{ user.email }}</p>
+                    <p ng-show="user.location"><strong>Location:</strong> {{ user.location }}</p>
+                    <p ng-show="user.bio"><strong>Bio:</strong></p>
+                    <blockquote ng-show="user.bio">
+                        {{ user.bio }}
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Settings modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-sm-3 settings-sidebar">
+                    <ul>
+                        <li class="header">User Settings</li>
+                        <li id="viewProfileTab"><a ng-click="showTab($event, 'profile')">Profile</a></li>
+                        <!--<li id="viewApplicationTab"><a ng-click="showTab($event, 'application')">Application</a></li>-->
+                        <li id="viewThemesTab"><a ng-click="showTab($event, 'theme')">Theme</a></li>
+                        <li id="viewAPITab"><a ng-click="showTab($event, 'api')">API Key</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 settings-content">
+                    <div class="tab" id="tabProfile">
+                        <h4>Profile</h4>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="profileName" class="col-sm-2 control-label">Name</label>
+                                <div class="col-sm-10">
+                                    <input id="profileName" class="form-control" type="text" ng-model="profileSettings.name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="profileEmail" class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input id="profileEmail" class="form-control" type="text" ng-model="profileSettings.email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="profileLocation" class="col-sm-2 control-label">Location</label>
+                                <div class="col-sm-10">
+                                    <input id="profileLocation" class="form-control" type="text" ng-model="profileSettings.location">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="profileBio" class="col-sm-2 control-label">Bio</label>
+                                <div class="col-sm-10">
+                                    <textarea id="profileBio" class="form-control" type="text" ng-model="profileSettings.bio"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="profileImg" class="col-sm-2 control-label">Image</label>
+                                <div class="col-sm-10">
+                                    <select id="profileImg" class="form-control" ng-model="profileSettings.imgUrl">
+                                        <option value="unknown">No Profile Picture</option>
+                                        <option value="1">Profile Picture 1</option>
+                                        <option value="2">Profile Picture 2</option>
+                                        <option value="3">Profile Picture 3</option>
+                                        <option value="4">Profile Picture 4</option>
+                                        <option value="5">Profile Picture 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10"><img class="profileImgPreview" src="content/img/user_{{ profileSettings.imgUrl }}.png"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--<div class="tab" id="tabApplication">
+                        <h4>Application</h4>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="profileTempo" class="col-sm-2 control-label">Tempo</label>
+                                <div class="col-sm-10">
+                                    <input id="profileTempo" class="form-control" type="number" ng-model="profileSettings.tempo">
+                                </div>
+                            </div>
+                        </form>
+                    </div>-->
+                    <div class="tab" id="tabThemes">
+                        <h4>Theme</h4>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <select id="themeSelected" class="form-control" ng-model="profileSettings.theme">
+                                        <option value="dark">Dark Theme</option>
+                                        <option value="light">Light Theme</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab" id="tabAPI">
+                        <h4>API Key</h4>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <p>Do not share your API key with other people - it will allow them to access your data!</p>
+                                    <p>If you think your key has been compromised, please reset it by clicking the button below.</p>
+                                    <p><code>{{ profileSettings.apikey }}</code></p>
+                                    <button type="button" class="btn btn-sm btn-danger" ng-click="resetApiKey()">Reset your API Key</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tabFooter">
+                        <button type="button" class="btn btn-xinity" ng-click="saveSettings()">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

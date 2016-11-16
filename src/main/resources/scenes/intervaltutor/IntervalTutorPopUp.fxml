@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.intervaltutor.IntervalTutorPopUpController">
+    <children>
+        <Text fx:id="notePairsTitle" layoutX="13.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Questions" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="16.05078125" />
+        <TextField fx:id="intervalTestNumberTextField" layoutX="164.0" layoutY="12.0" minWidth="100.0" prefHeight="25.0" prefWidth="144.0" text="1" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0" />
+        <Button fx:id="startTestButton" layoutX="164.0" layoutY="63.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="69.0" text="Start" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="164.0" />
+        <Text fx:id="invalidValueText" disable="true" fill="#e80404" layoutX="13.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Text>
+        <Button fx:id="cancelButton" layoutX="269.0" layoutY="93.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="69.0" text="Cancel" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="12.0" />
+    </children>
+</AnchorPane>

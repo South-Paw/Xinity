@@ -1,0 +1,283 @@
+package seng302;
+
+import java_cup.runtime.*;
+import java.util.ArrayList;
+import java.util.List;
+import seng302.command.*;
+import seng302.command.app.*;
+import seng302.command.musical.*;
+import seng302.command.play.*;
+import seng302.command.term.*;
+import seng302.command.tutor.*;
+
+/*
+    The following block lets you inject code into the parser class
+
+    See: http://www2.cs.tum.edu/projects/cup/docs.php#parser
+*/
+
+parser code {:
+    public void report_error(String message, Object info) {
+
+    }
+
+    public void syntax_error(Symbol cur_token) {
+
+    }
+:};
+
+/* Terminal tokens returns by the lexer */
+terminal COMMAND_VERSION, COMMAND_MIDI, COMMAND_NOTE, COMMAND_SEMITONE;
+terminal COMMAND_HASENHARMONIC, COMMAND_SIMPLEENHARMONIC, COMMAND_ENHARMONIC;
+terminal COMMAND_GETTEMPO, COMMAND_SETTEMPO, COMMAND_GETCROTCHET, COMMAND_PLAYNOTE, COMMAND_PLAYINTERVAL;
+terminal COMMAND_INTERVAL, COMMAND_SEMITONESINTERVAL, COMMAND_FINDINTERVAL;
+terminal COMMAND_HASENHARMONICINTERVAL, COMMAND_ENHARMONICINTERVAL;
+terminal COMMAND_CHORD, COMMAND_PLAYCHORD;
+terminal COMMAND_PLAYSCALE;
+terminal COMMAND_TERMDEFINE, COMMAND_TERMMEANING, COMMAND_TERMLANGUAGE, COMMAND_TERMCATEGORY;
+terminal COMMAND_TERMLOOKUP, COMMAND_TERMREMOVE;
+terminal COMMAND_PITCHTUTOR, COMMAND_INTERVALTUTOR, COMMAND_SCALETUTOR, COMMAND_TERMTUTOR;
+terminal COMMAND_CHORDTUTOR, COMMAND_SIGNATURETUTOR, COMMAND_CHORDSPELLINGTUTOR;
+terminal COMMAND_FINDSCALE, COMMAND_FINDSCALEMIDI;
+terminal COMMAND_KEYBOARD;
+terminal COMMAND_SIGNATURE, COMMAND_SCALESIGNATURE;
+terminal COMMAND_FINDCHORD, COMMAND_QUALITY, COMMAND_CHORDFUNCTION, COMMAND_FUNCTION;
+terminal COMMAND_MODE, COMMAND_PARENT, COMMAND_HELP;
+
+terminal OPEN_PAR, CLOSE_PAR, COMMA, QUOTE;
+terminal Integer NUMBER;
+terminal String CHARACTER;
+terminal String WORD;
+terminal String PUNCTUATION;
+terminal String PLUS_MINUS;
+terminal String SIMPLE_NOTE;
+terminal String FULL_NOTE;
+terminal String FLAT_SHARP_NUMBER;
+
+/* Non terminals */
+non terminal Command command;
+non terminal String no_params;
+non terminal List<String> expression;
+non terminal List<String> args;
+non terminal String const;
+non terminal String string;
+non terminal String words;
+non terminal String quote;
+
+command         ::= COMMAND_VERSION no_params
+                    {: RESULT = new Version(); :}
+                    |
+                    COMMAND_NOTE expression:e
+                    {: RESULT = new Note(e); :}
+                    |
+                    COMMAND_MIDI expression:e
+                    {: RESULT = new Midi(e); :}
+                    |
+                    COMMAND_SEMITONE expression:e
+                    {: RESULT = new Semitone(e); :}
+                    |
+                    COMMAND_HASENHARMONIC expression:s
+                    {: RESULT = new HasEnharmonic(s); :}
+                    |
+                    COMMAND_SIMPLEENHARMONIC expression:e
+                    {: RESULT = new SimpleEnharmonic(e); :}
+                    |
+                    COMMAND_ENHARMONIC expression:e
+                    {: RESULT = new Enharmonic(e); :}
+                    |
+                    COMMAND_INTERVAL expression:e
+                    {: RESULT = new Interval(e); :}
+                    |
+                    COMMAND_SEMITONESINTERVAL expression:e
+                    {: RESULT = new SemitonesInterval(e); :}
+                    |
+                    COMMAND_FINDINTERVAL expression:e
+                    {: RESULT = new FindInterval(e); :}
+                    |
+                    COMMAND_CHORD expression:e
+                    {: RESULT = new Chord(e); :}
+                    |
+                    COMMAND_FINDCHORD expression:e
+                    {: RESULT = new FindChord(e); :}
+                    |
+                    COMMAND_PLAYNOTE expression:e
+                    {: RESULT = new PlayNote(e); :}
+                    |
+                    COMMAND_GETCROTCHET no_params
+                    {: RESULT = new GetCrotchet(); :}
+                    |
+                    COMMAND_GETTEMPO no_params
+                    {: RESULT = new GetTempo(); :}
+                    |
+                    COMMAND_SETTEMPO expression:e
+                    {: RESULT = new SetTempo(e); :}
+                    |
+                    COMMAND_TERMDEFINE expression:e
+                    {: RESULT = new TermDefine(e); :}
+                    |
+                    COMMAND_TERMMEANING expression:e
+                    {: RESULT = new TermMeaning(e); :}
+                    |
+                    COMMAND_TERMLANGUAGE expression:e
+                    {: RESULT = new TermLanguage(e); :}
+                    |
+                    COMMAND_TERMCATEGORY expression:e
+                    {: RESULT = new TermCategory(e); :}
+                    |
+                    COMMAND_TERMLOOKUP expression:e
+                    {: RESULT = new TermLookup(e); :}
+                    |
+                    COMMAND_TERMREMOVE expression:e
+                    {: RESULT = new TermRemove(e); :}
+                    |
+                    COMMAND_PITCHTUTOR no_params
+                    {: RESULT = new PitchTutor(); :}
+                    |
+                    COMMAND_PITCHTUTOR expression:e
+                    {: RESULT = new PitchTutor(e); :}
+                    |
+                    COMMAND_INTERVALTUTOR no_params
+                    {: RESULT = new IntervalTutor(); :}
+                    |
+                    COMMAND_INTERVALTUTOR expression:e
+                    {: RESULT = new IntervalTutor(e); :}
+                    |
+                    COMMAND_SCALETUTOR no_params
+                    {: RESULT = new ScaleTutor(); :}
+                    |
+                    COMMAND_SCALETUTOR expression:e
+                    {: RESULT = new ScaleTutor(e); :}
+                    |
+                    COMMAND_PLAYSCALE expression:e
+                    {: RESULT = new PlayScale(e); :}
+                    |
+                    COMMAND_PLAYINTERVAL expression:e
+                    {: RESULT = new PlayInterval(e); :}
+                    |
+                    COMMAND_PLAYCHORD expression:e
+                    {: RESULT = new PlayChord(e); :}
+                    |
+                    COMMAND_FINDSCALE expression:e
+                    {: RESULT = new FindScale(e); :}
+                    |
+                    COMMAND_FINDSCALEMIDI expression:e
+                    {: RESULT = new FindScaleMidi(e); :}
+                    |
+                    COMMAND_TERMTUTOR no_params
+                    {: RESULT = new TermTutor(); :}
+                    |
+                    COMMAND_TERMTUTOR expression:e
+                    {: RESULT = new TermTutor(e); :}
+                    |
+                    COMMAND_CHORDTUTOR no_params
+                    {: RESULT = new ChordTutor(); :}
+                    |
+                    COMMAND_CHORDTUTOR expression:e
+                    {: RESULT = new ChordTutor(e); :}
+                    |
+                    COMMAND_HASENHARMONICINTERVAL expression:e
+                    {: RESULT = new HasEnharmonicInterval(e); :}
+                    |
+                    COMMAND_ENHARMONICINTERVAL expression:e
+                    {: RESULT = new EnharmonicInterval(e); :}
+                    |
+                    COMMAND_KEYBOARD no_params
+                    {: RESULT = new Keyboard(); :}
+                    |
+                    COMMAND_SIGNATURE expression:e
+                    {: RESULT = new Signature(e); :}
+                    |
+                    COMMAND_SCALESIGNATURE expression:e
+                    {: RESULT = new ScaleSignature(e); :}
+                    |
+                    COMMAND_SIGNATURETUTOR no_params
+                    {: RESULT = new SignatureTutor(); :}
+                    |
+                    COMMAND_SIGNATURETUTOR expression:e
+                    {: RESULT = new SignatureTutor(e); :}
+                    |
+                    COMMAND_MODE expression:e
+                    {: RESULT = new Mode(e); :}
+                    |
+                    COMMAND_PARENT expression:e
+                    {: RESULT = new Parent(e); :}
+                    |
+                    COMMAND_QUALITY expression:e
+                    {: RESULT = new Quality(e); :}
+                    |
+                    COMMAND_CHORDFUNCTION expression:e
+                    {: RESULT = new ChordFunction(e); :}
+                    |
+                    COMMAND_FUNCTION expression:e
+                    {: RESULT = new Function(e); :}
+                    |
+                    COMMAND_CHORDSPELLINGTUTOR no_params
+                    {: RESULT = new ChordSpellingTutor(); :}
+                    |
+                    COMMAND_CHORDSPELLINGTUTOR expression:e
+                    {: RESULT = new ChordSpellingTutor(e); :}
+                    |
+                    COMMAND_HELP no_params
+                    {: RESULT = new Help(); :}
+                    |
+                    COMMAND_HELP expression:e
+                    {: RESULT = new Help(e); :}
+                    ;
+
+no_params        ::= OPEN_PAR CLOSE_PAR
+                    {: RESULT = null; :}
+                    ;
+
+expression      ::= OPEN_PAR args:list CLOSE_PAR
+                    {: RESULT = list; :}
+                    ;
+
+args            ::= args:list COMMA const:c
+                    {: list.add(c); RESULT = list; :}
+                    |
+                    const:c
+                    {: RESULT = new ArrayList<String>(); RESULT.add(c); :}
+                    ;
+
+const           ::= SIMPLE_NOTE:sn
+                    {: RESULT = sn; :}
+                    |
+                    FULL_NOTE:fn
+                    {: RESULT = fn; :}
+                    |
+                    NUMBER:n
+                    {: RESULT = n.toString(); :}
+                    |
+                    CHARACTER:c
+                    {: RESULT = c; :}
+                    |
+                    WORD:w
+                    {: RESULT = w; :}
+                    |
+                    string:s
+                    {: RESULT = s; :}
+                    |
+                    PLUS_MINUS:s
+                    {: RESULT = s; :}
+                    |
+                    PUNCTUATION:p
+                    {: RESULT = p; :}
+                    |
+                    FLAT_SHARP_NUMBER:fsn
+                    {: RESULT = fsn; :}
+                    ;
+
+string          ::= quote words:w quote
+                    {: RESULT = w; :}
+                    ;
+
+words           ::= words:string WORD:w
+                    {: string += " " + w; RESULT = string; :}
+                    |
+                    WORD:w
+                    {: RESULT = w; :}
+                    ;
+
+quote           ::= QUOTE
+                    {: RESULT = null; :}
+                    ;

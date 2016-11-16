@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.MainSceneController">
+    <children>
+        <MenuBar prefHeight="30.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="menuFileNewProject" accelerator="Shortcut+N" mnemonicParsing="false" onAction="#newProject" text="New Project" />
+                        <MenuItem fx:id="menuFileOpenProject" accelerator="Shortcut+O" mnemonicParsing="false" onAction="#openProject" text="Open Project..." />
+                        <MenuItem fx:id="menuFileSaveProject" accelerator="Shortcut+S" mnemonicParsing="false" onAction="#saveProject" text="Save Project" />
+                        <MenuItem fx:id="menuFileSaveAsProject" accelerator="Shortcut+Shift+S" mnemonicParsing="false" onAction="#saveProjectAs" text="Save Project As..." />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuFileOpenTranscript" mnemonicParsing="false" onAction="#openTranscript" text="Open Transcript..." />
+                        <Menu fx:id="menuFileSaveTranscript" mnemonicParsing="false" text="Save Transcript">
+                            <items>
+                                <MenuItem fx:id="SaveFullTranscript" mnemonicParsing="false" onAction="#saveFullTranscript" text="Full Transcript..." />
+                                <MenuItem fx:id="SaveTranscriptCommands" mnemonicParsing="false" onAction="#saveTranscriptCommands" text="Only Commands..." />
+                            </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuFileQuit" mnemonicParsing="false" onAction="#quitApp" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Keyboard">
+                    <items>
+                        <MenuItem fx:id="menuKeyboardOpen" onAction="#openKeyboard" accelerator="Shortcut+K" mnemonicParsing="false" text="Open" />
+                    </items>
+                </Menu>
+                <Menu fx:id="menuCommands" mnemonicParsing="false" text="Command" />
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openDslReference" text="DSL Reference" />
+                        <MenuItem mnemonicParsing="false" onAction="#openAbout" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TabPane fx:id="mainTabPane" layoutY="30.0" prefHeight="770.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+            <tabs>
+                <Tab fx:id="transcriptTab" text="Transcript">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <fx:include fx:id="includeTranscript" source="TranscriptScene.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="pitchTutorTab" text="Pitch Tutor">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <fx:include fx:id="includePitchTutor" source="pitchtutor/PitchTutorScene.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="intervalTutorTab" text="Interval Tutor">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <fx:include fx:id="includeIntervalTutor" source="intervaltutor/IntervalTutorScene.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="termTutorTab" text="Term Tutor">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <fx:include fx:id="includeTermTutor" source="termtutor/TermTutorScene.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="scaleTutorTab" text="Scale Tutor">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <fx:include fx:id="includeScaleTutor" source="scaletutor/ScaleTutorScene.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="chordTutorTab" text="Chord Tutor">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <fx:include fx:id="includeChordTutor" source="chordtutor/ChordTutorScene.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="signatureTutorTab" text="Signature Tutor">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <fx:include fx:id="includeSignatureTutor" source="signaturetutor/SignatureTutorScene.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="spellingTutorTab" text="Spelling Tutor">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <fx:include fx:id="includeSpellingTutor" source="spellingtutor/SpellingTutorScene.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.signaturetutor.SignatureTutorPopUpController">
+    <children>
+        <TextField fx:id="numberOfQuestionsField" layoutX="158.0" layoutY="12.0" minWidth="100.0" prefHeight="25.0" prefWidth="150.0" text="1" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0" />
+        <Button fx:id="startTestButton" layoutX="158.0" layoutY="126.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="69.0" text="Start" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="158.0" />
+        <Text layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Questions" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="17.0" />
+        <Button fx:id="cancelButton" layoutX="269.0" layoutY="93.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="69.0" text="Cancel" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="12.0" />
+        <Text fx:id="invalidValueText" disable="true" fill="#e80404" layoutX="13.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Text>
+        <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Signature Specifier" />
+        <ChoiceBox fx:id="signatureSpecifierDropDown" layoutX="158.0" layoutY="46.0" prefWidth="150.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="46.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Number" />
+                    <String fx:value="Notes" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Number" />
+            </value>
+        </ChoiceBox>
+      <Text layoutX="14.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scale Name Type" />
+      <ChoiceBox fx:id="scaleNameTypeDropDown" layoutX="158.0" layoutY="82.0" prefWidth="150.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="82.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Major" />
+               <String fx:value="Minor" />
+               <String fx:value="Both" />
+            </FXCollections>
+         </items>
+          <value>
+              <String fx:value="Major" />
+          </value>
+      </ChoiceBox>
+    </children>
+</AnchorPane>

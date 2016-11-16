@@ -1,0 +1,47 @@
+<div id="command-line-root">
+    <div id="command-toolbar" class="toolbar">
+        <ul class="toolbar-left">
+            <li><a ng-click="clearOutputArea()"><i class="fa fa-fw fa-trash-o"></i> Clear Output</a></li>
+            <li><a ng-click="toggleSyntax()"><i class="fa fa-fw fa-lightbulb-o"></i> Toggle Syntax</a></li>
+        </ul>
+
+        <!-- Use this for web playback (Story W9)
+        <ul class="toolbar-right">
+            <!-- move pointer to begining of stack
+            <li><a ng-click="playbackMoveToStart()"><i class="fa fa-fw fa-step-backward"></i></a></li>
+            <!-- play one command
+            <li><a ng-click="playbackPlayOne()"><i class="fa fa-fw fa-play"></i></a></li>
+            <!-- play all commands
+            <li><a ng-click="playbackPlayAll()"><i class="fa fa-fw fa-eject fa-rotate-90"></i></a></li>
+            <!-- move pointer to the end of the stack
+            <li><a ng-click="playbackMoveToEnd()"><i class="fa fa-fw fa-step-forward"></i></a></li>
+        </ul>
+
+        <ul class="toolbar-right">
+            <li><a ng-click="showPlaybackStack()">4/45 <span class="hidden-xs">on Playback Stack</span></a></li>
+        </ul>
+         -->
+    </div>
+
+    <div id="command-output">
+        <ul id="app-output"></ul>
+    </div>
+
+    <div id="command-input">
+        <div class="input-area">
+            <!--
+            <div class="reference-modal">
+                <a ng-click="showReference()"><i class="fa fa-fw fa-question-circle"></i></a>
+            </div>
+            -->
+            <div class="input-field">
+                <input id="user-input" ng-keyup="$event.keyCode == 13 ? executeCommand() : null; $event.keyCode == 38 ? commandUp() : null; $event.keyCode == 40 ? commandDown() : null" placeholder="Enter a command..." />
+            </div>
+            <div class="submit-button">
+                <a ng-click="executeCommand()"><i class="fa fa-fw fa-play-circle"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="command-status"></div>
+</div>

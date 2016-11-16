@@ -1,0 +1,1412 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.main-view {
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.xinity-logo {
+    background: #009386;
+    color: #fdfdfd;
+    font-family: 'Baloo Chettan', cursive;
+}
+
+.btn-xinity {
+    color: #fff;
+    background-color: #009386;
+    border-color: #11756c;
+}
+
+.btn-xinity:hover,
+.btn-xinity:focus {
+    color: #fff;
+    background-color: #00867a;
+}
+
+/** ===========================================================================
+ * Bootstrap Overrides
+ */
+.row {
+    margin: 0;
+}
+
+/** ===========================================================================
+ * Login Component
+ */
+login {
+    text-align: center;
+}
+
+login .xinity-logo-img {
+    margin-top: 20px;
+}
+
+login .signin-form,
+login .registration-form {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+login .signin-form .signin-heading,
+login .signin-form .checkbox,
+login .registration-form .registration-heading,
+login .registration-form .checkbox {
+    margin-bottom: 10px;
+}
+
+login .signin-form .checkbox,
+login .registration-form .checkbox {
+    font-weight: normal;
+}
+
+login .signin-form .form-control,
+login .registration-form .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+login .signin-form .form-control:focus,
+login .registration-form .form-control:focus {
+    z-index: 2;
+}
+
+login .signin-form input#inputUsername,
+login .registration-form input#signupUsername,
+login .registration-form input#signupName {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+login .signin-form input#inputPassword,
+login .registration-form input#signupPassword,
+login .registration-form input#signupEmail {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+login .create-account,
+login .already-have-account {
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+}
+
+/** ===========================================================================
+ * Workbench Component
+ */
+workbench {
+    height: 100%;
+    display: block;
+}
+
+workbench #app-sidebar {
+    width: 100px;
+    height: 100%;
+    float: left;
+    border-right: 1px solid;
+}
+
+    workbench #app-sidebar .app-logo {
+        padding: 12px;
+        border-bottom: 1px solid;
+    }
+
+        workbench #app-sidebar .app-logo .xinity-logo-alt {
+            font-size: 52px;
+            line-height: 75px;
+            border-radius: 50%;
+            border-bottom-right-radius: 0px;
+            text-align: center;
+        }
+
+    workbench #app-nav {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        height: calc(100% - 175px);
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    @media (max-width: 767px) {
+        workbench #app-nav {
+            height: calc(100% - 75px);
+        }
+    }
+
+        workbench #app-nav li a {
+            padding: 15px;
+            width: 100%;
+            border-bottom: 1px solid;
+            display: block;
+            font-size: 12px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            workbench #app-nav li a.active {
+                padding-left: 13px;
+                border-left: 2px solid;
+            }
+
+            workbench #app-nav li a i {
+                width: 100%;
+                display: block;
+                font-size: 33px;
+            }
+
+            workbench #app-nav li a span {
+                margin-top: 5px;
+                display: block;
+            }
+
+    workbench #app-user {
+        border-top: 1px solid;
+    }
+
+        workbench #app-user .user-icon {
+            width: 75%;
+            float: left;
+        }
+
+            workbench #app-user .user-icon a {
+                cursor: pointer;
+            }
+
+            workbench #app-user .user-icon img {
+                max-width: 100%;
+            }
+
+        workbench #app-user .user-actions {
+            width: 25%;
+            height: 74px;
+            float: left;
+        }
+
+            workbench #app-user .user-actions a {
+                height: 50%;
+                display: block;
+                border-top: 1px solid;
+                cursor: pointer;
+                line-height: 37px;
+                text-align: center;
+            }
+
+            workbench #app-user .user-actions a:first-child {
+                border-top: none;
+            }
+
+workbench #app-topbar {
+    width: calc(100% - 100px);
+    height: 41px;
+    float: left;
+    border-bottom: 1px solid;
+}
+
+    workbench #app-topbar .xinity-logo-full {
+        margin: 5px auto;
+        width: 86px;
+        max-height: 30px;
+        border-radius: 25px;
+        border-bottom-right-radius: 0px;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    workbench #app-topbar .toolbar {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        workbench #app-topbar .toolbar li {
+            float: left;
+        }
+
+            workbench #app-topbar .toolbar li a {
+                padding: 0 10px;
+                display: block;
+                cursor: pointer;
+                font-size: 18px;
+                line-height: 40px;
+                text-align: center;
+            }
+
+        workbench #app-topbar .toolbar.toolbar-left {
+            float: left;
+        }
+
+            workbench #app-topbar .toolbar.toolbar-left li a {
+                border-right: 1px solid;
+            }
+
+        workbench #app-topbar .toolbar.toolbar-right {
+            float: right;
+        }
+
+            workbench #app-topbar .toolbar.toolbar-right li a {
+                border-left: 1px solid;
+            }
+
+workbench #app-view {
+    width: calc(100% - 100px);
+    height: calc(100% - 41px);
+    float: left;
+}
+
+workbench #profileModal {
+
+}
+
+    workbench #profileModal .profile-picture {
+        text-align: center;
+    }
+
+        workbench #profileModal .profile-picture img {
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+        }
+
+    workbench #profileModal .profile-header {
+        padding-bottom: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid;
+        text-align: center;
+    }
+
+        workbench #profileModal .profile-header h4 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+    workbench #profileModal .profile-info {
+
+    }
+
+workbench #settingsModal {
+}
+
+    workbench #settingsModal .col-sm-3,
+    workbench #settingsModal .col-sm-8 {
+        padding: 0;
+    }
+
+    workbench #settingsModal .modal-content {
+        overflow: hidden;
+    }
+
+    workbench #settingsModal .settings-sidebar {
+        height: 500px;
+    }
+
+        @media (max-width: 767px) {
+            workbench #settingsModal .settings-sidebar {
+                height: 100%;
+                border-bottom: 1px solid;
+            }
+        }
+
+        workbench #settingsModal .settings-sidebar ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+            workbench #settingsModal .settings-sidebar ul li {
+
+            }
+
+                workbench #settingsModal .settings-sidebar ul li.header {
+                    padding: 10px 20px;
+                    border-bottom: 1px solid;
+                    font-weight: bold;
+                }
+
+                workbench #settingsModal .settings-sidebar ul li a {
+                    display: block;
+                    padding: 10px 15px 10px 16px;
+                    border-left: 4px solid transparent;
+                    cursor: pointer;
+                }
+
+                    workbench #settingsModal .settings-sidebar ul li a:hover,
+                    workbench #settingsModal .settings-sidebar ul li a:focus {
+                        text-decoration: none;
+                    }
+
+    workbench #settingsModal .settings-content {
+        border-left: 1px solid;
+        height: 500px;
+        padding: 0;
+    }
+
+        @media (max-width: 767px) {
+            workbench #settingsModal .settings-content {
+                border-left: none;
+            }
+        }
+
+        workbench #settingsModal .settings-content .tab {
+            padding: 15px;
+            height: calc(100% - 55px);
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+            workbench #settingsModal .settings-content .tab h4 {
+                margin-top: 0;
+                margin-bottom: 15px;
+            }
+
+            workbench #settingsModal .settings-content .profileImgPreview {
+                width: 100px;
+                height: 100px;
+            }
+
+    workbench #settingsModal .settings-content .tabFooter {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        text-align: right;
+        left: 0;
+        border-top: 1px solid;
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+/** ===========================================================================
+ * Dashboard Component
+ */
+@media (max-width: 767px) {
+    .bump-out dashboard {
+        width: calc(100% + 100px);
+    }
+}
+
+dashboard {
+    height: 100%;
+    display: block;
+}
+
+dashboard #dashboard-root {
+    height: 100%;
+}
+
+dashboard .page-header {
+    text-align: center;
+}
+
+/** ===========================================================================
+ * Command Line Component
+ */
+@media (max-width: 767px) {
+    .bump-out commandline {
+        width: calc(100% + 100px);
+    }
+}
+
+commandline {
+    height: 100%;
+    display: block;
+}
+
+commandline #command-line-root {
+    padding: 15px;
+    height: 100%;
+}
+
+commandline #command-toolbar {
+    margin-bottom: 10px;
+    height: 32px;
+    overflow: hidden;
+}
+
+commandline #command-output {
+    margin-bottom: 10px;
+    padding: 10px;
+    height: calc(100% - 114px); /* 82px 114px When story W9 is done, add 32px to this. */
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid;
+}
+
+    commandline #command-output ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+commandline #command-input {
+    margin-bottom: 10px;
+    height: 32px;
+    overflow: hidden;
+}
+
+    commandline #command-input .input-area {
+        height: 100%;
+        display: block;
+        border: 1px solid;
+        border-radius: 3px;
+    }
+
+        commandline #command-input .input-area .reference-modal a {
+            line-height: 30px;
+            width: 32px;
+            float: left;
+            border-right: 1px solid;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        commandline #command-input .input-area .input-field {
+            width: calc(100% - 64px);
+            height: 100%;
+            float: left;
+        }
+
+            commandline #command-input .input-area .input-field input {
+                margin: 0;
+                padding: 2px 5px;
+                width: 100%;
+                height: 100%;
+                -webkit-appearance: none !important;
+                appearance: none;
+                box-sizing: none;
+                box-shadow: none;
+                border: none;
+                border-radius: none;
+                display: block;
+                font-family: inherit;
+                font-size: 16px;
+            }
+
+                commandline #command-input .input-area .input-field input:focus {
+                    outline: none;
+                }
+
+        commandline #command-input .input-area .submit-button a {
+            line-height: 30px;
+            width: 32px;
+            float: right;
+            border-left: 1px solid;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+            color: #379a39 !important;
+        }
+
+commandline #command-status {
+    height: 20px;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+/** ===========================================================================
+ * Practice Schedule Component
+ */
+@media (max-width: 767px) {
+    .bump-out practiceschedules {
+        width: calc(100% + 100px);
+    }
+}
+
+practiceschedules {
+    height: 100%;
+    display: block;
+}
+
+practiceschedules #practice-schedules-root {
+    padding: 15px;
+    height: 100%;
+}
+
+practiceschedules #schedule-controls {
+    margin-bottom: 10px;
+    height: 32px;
+    overflow: hidden;
+}
+
+practiceschedules #schedule-list {
+    max-height: calc(100% - 42px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid;
+}
+
+    practiceschedules #schedule-list .table {
+        margin: 0;
+        padding: 0;
+    }
+
+        practiceschedules #schedule-list .table>tbody>tr>td {
+            line-height: 30px;
+            white-space: nowrap;
+        }
+
+            practiceschedules #schedule-list .table>tbody>tr>td.info-td {
+                padding-top: 30px;
+                padding-bottom: 30px;
+                border: none !important;
+                text-align: center;
+            }
+
+            practiceschedules #schedule-list .table>tbody>tr>td.name,
+            practiceschedules #schedule-list .table>tbody>tr>td.description {
+                width: 50%;
+                max-width: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            @media (max-width: 767px) {
+                practiceschedules #schedule-list .table>tbody>tr>td.name {
+                    width: 100%;
+                }
+            }
+
+            practiceschedules #schedule-list .table>tbody>tr>td.qnum {
+                text-align: right;
+            }
+
+            practiceschedules #schedule-list .table>tbody>tr>td.runs {
+                text-align: right;
+            }
+
+            practiceschedules #schedule-list .table>tbody>tr>td.controls {
+                text-align: right;
+            }
+
+        practiceschedules #schedule-list .table>tbody>tr:nth-child(3)>td {
+            border: none;
+        }
+
+practiceschedules #addScheduleModal .modal-body,
+practiceschedules #editScheduleModal .modal-body {
+    padding: 0px;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+practiceschedules #addScheduleModal .modal-body .alert,
+practiceschedules #editScheduleModal .modal-body .alert {
+    margin: 15px;
+    margin-bottom: 0px;
+}
+
+practiceschedules #addScheduleModal #newScheduleSettings,
+practiceschedules #editScheduleModal #editScheduleSettings {
+    padding: 15px;
+    border-bottom: 1px solid;
+}
+
+practiceschedules #addScheduleModal #newScheduleQuestions,
+practiceschedules #editScheduleModal #editScheduleQuestions {
+
+}
+
+    practiceschedules #addScheduleModal #newScheduleQuestions .scheduleQuestion,
+    practiceschedules #editScheduleModal #editScheduleQuestions .scheduleQuestion {
+        margin: 15px;
+        padding: 10px;
+        border: 1px solid;
+    }
+
+        practiceschedules #addScheduleModal #newScheduleQuestions .scheduleQuestion h5,
+        practiceschedules #editScheduleModal #editScheduleQuestions .scheduleQuestion h5 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid;
+        }
+
+        practiceschedules #addScheduleModal #newScheduleQuestions .scheduleQuestion .form-group:last-child,
+        practiceschedules #editScheduleModal #editScheduleQuestions .scheduleQuestion .form-group:last-child {
+            margin-bottom: 0px;
+        }
+
+practiceschedules #playScheduleModal {
+
+}
+
+practiceschedules #playScheduleModal .playScheduleTop {
+    margin: 15px 15px 0 15px;
+    overflow: hidden;
+}
+
+    practiceschedules #playScheduleModal .playScheduleTop #scheduleDetails {
+        float: left;
+    }
+
+        practiceschedules #playScheduleModal .playScheduleTop #scheduleDetails #scheduleQuestionType {
+            text-transform: capitalize;
+        }
+
+    practiceschedules #playScheduleModal .playScheduleTop #scheduleClose {
+        float: right;
+        margin: 0;
+        font-size: 32px;
+        text-shadow: 2px 2px 2px #000000;
+        opacity: 0.85;
+    }
+
+practiceschedules #playScheduleModal .modal-dialog {
+    margin: 30px 15px;
+}
+
+practiceschedules #playScheduleModal .modal-content {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+
+practiceschedules #playScheduleModal #playScheduleLoading {
+    text-align: center;
+    padding: 30px 0;
+}
+
+practiceschedules #playScheduleModal #playScheduleContent {
+    text-align: center;
+}
+
+    practiceschedules #playScheduleModal #playScheduleContent #scheduleQuestionArea {
+
+    }
+
+        practiceschedules #playScheduleModal #playScheduleContent #scheduleQuestionArea h2 {
+            margin: 0 auto 20px auto;
+            width: 80%;
+        }
+
+        practiceschedules #playScheduleModal #playScheduleContent #scheduleQuestionArea #hintArea {
+            display: block;
+            height: 22px;
+        }
+
+            practiceschedules #playScheduleModal #playScheduleContent #scheduleQuestionArea #hintArea #scheduleHint {
+                line-height: 22px;
+            }
+
+        practiceschedules #playScheduleModal #playScheduleContent #scheduleQuestionArea .listenToAnswerArea {
+            margin-top: 20px;
+        }
+
+    practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer {
+        margin-top: 20px;
+        border-top: 1px solid;
+    }
+
+        practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer #ratingQuestionText {
+            margin-top: 20px;
+        }
+
+        practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer ul.rating {
+            list-style: none;
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+            practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer ul.rating li {
+                display: inline-block;
+            }
+
+                practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer ul.rating li a.star {
+                    font-size: 40px;
+                    cursor: pointer;
+                }
+
+                    practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer ul.rating li a.star.lit {
+
+                    }
+
+                    practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer ul.rating li a.star:hover,
+                    practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer ul.rating li a.star:focus {
+
+                    }
+
+        practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer #ratingText {
+
+        }
+
+practiceschedules #playScheduleModal #playScheduleResults {
+
+}
+
+    practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable {
+
+    }
+
+        practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable {
+
+        }
+
+            practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qid {
+
+            }
+
+            practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qtype {
+                text-transform: capitalize;
+            }
+
+            practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .question {
+
+            }
+
+            practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qrating {
+
+            }
+
+                practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qrating ul.rating {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                    practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qrating ul.rating .star {
+                        display: inline-block;
+                        float: left;
+                    }
+
+                        practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qrating ul.rating .star.lit {
+
+                        }
+
+    practiceschedules #playScheduleModal #playScheduleResults #scheduleResultActions {
+        text-align: right;
+    }
+
+practiceschedules #playScheduleModal .playScheduleBottom {
+    margin: 0 15px 0 15px;
+    overflow: hidden;
+}
+
+    practiceschedules #playScheduleModal .playScheduleBottom #scheduleSkip {
+        float: left;
+    }
+
+    practiceschedules #playScheduleModal .playScheduleBottom #scheduleNext,
+    practiceschedules #playScheduleModal .playScheduleBottom #scheduleDone {
+        float: right;
+    }
+
+@media (min-width: 768px) {
+    practiceschedules #playScheduleModal .modal-dialog {
+        width: 80%;
+        margin: 90px auto;
+    }
+
+    practiceschedules #playScheduleModal .playScheduleTop {
+        margin: 15px auto 0px auto;
+        width: 80%;
+    }
+
+    practiceschedules #playScheduleModal .playScheduleBottom {
+        margin: 0px auto;
+        width: 80%;
+    }
+}
+
+/** ===========================================================================
+ * Reusable elements
+ */
+.toolbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .toolbar ul.toolbar-left {
+        margin-right: 10px;
+        float: left;
+    }
+
+    .toolbar ul.toolbar-left:first-child {
+        margin: 0;
+    }
+
+    .toolbar ul.toolbar-right {
+        margin-left: 10px;
+        float: right;
+    }
+
+    .toolbar ul.toolbar-right:first-child {
+        margin: 0;
+    }
+
+    .toolbar ul li {
+        float: left;
+    }
+
+    .toolbar ul li a {
+        padding: 0 6px;
+        min-width: 32px;
+        display: block;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        cursor: pointer;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .toolbar ul li:first-child a {
+        border-left: 1px solid;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    .toolbar ul li a {
+
+    }
+
+    .toolbar ul li:last-child a {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+/** ===========================================================================
+ * Dark Theme
+ */
+.theme-dark ::-webkit-scrollbar-thumb {
+    background: #354144;
+}
+
+.theme-dark ::-webkit-scrollbar-track {
+    background: #1b1c1d;
+}
+
+.theme-dark .btn-default,
+.theme-dark .open>.dropdown-toggle.btn-default {
+    color: #bebfbf;
+    background-color: #2f393d;
+    border-color: #1b1c1d;
+}
+
+.theme-dark .btn-default:hover,
+.theme-dark .btn-default:focus,
+.theme-dark open>.dropdown-toggle.btn-default:focus,
+.theme-dark .open>.dropdown-toggle.btn-default:hover {
+    color: #bebfbf;
+    background-color: #343f44;
+    border-color: #1b1c1d;
+}
+
+.theme-dark .dropdown-menu {
+    background-color: #23282b;
+}
+
+.theme-dark .dropdown-menu>li>a {
+    color: #bebfbf;
+}
+
+.theme-dark .dropdown-menu>li>a:focus,
+.theme-dark .dropdown-menu>li>a:hover {
+    color: #bebfbf;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.theme-dark {
+   scrollbar-face-color: #354144;
+   scrollbar-track-color: #1b1c1d;
+}
+
+.theme-dark .toolbar ul li a {
+    background: #2f393d;
+    border-color: #1b1c1d;
+    color: #bebfbf;
+}
+
+    .theme-dark .toolbar ul li a:hover,
+    .theme-dark .toolbar ul li a:focus {
+        background: #343f44;
+    }
+
+.theme-dark .modal .modal-content {
+    background-color: #282f33;
+}
+
+.theme-dark .modal .modal-content .profile-header {
+    border-bottom-color: #354144 !important;
+}
+
+.theme-dark .form-control {
+    background-color: #333b3e;
+    border-color: #424f52;
+    color: #dadada;
+}
+
+.theme-dark .form-control:focus {
+    border-color: #009386;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0,147,134,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0,147,134,.6);
+}
+
+.theme-dark login a {
+    color: #959999;
+    cursor: pointer;
+}
+
+.theme-dark login a:hover,
+.theme-dark login a:focus {
+    color: #e3e4e4;
+}
+
+.theme-dark .main-view {
+    background: #282f33;
+    color: #dadada;
+}
+
+.theme-dark #app-sidebar {
+    background: #23282b;
+    border-color: #1b1c1d;
+}
+
+.theme-dark #app-sidebar .app-logo {
+    border-color: #1b1c1d;
+}
+
+.theme-dark #app-user {
+    border-color: #1b1c1d;
+}
+
+.theme-dark #app-user .user-icon {
+    background: #272a2b;
+}
+
+.theme-dark #app-user .user-icon #user-profile-icon:hover,
+.theme-dark #app-user .user-icon #user-profile-icon:focus {
+    transition: opacity 0.2s;
+    -webkit-transition: opacity 0.2s;
+    opacity: 0.7;
+}
+
+.theme-dark #app-user .user-actions a {
+    border-color: #1b1c1d;
+    color: #bebfbf;
+}
+
+.theme-dark #app-user .user-actions a:hover,
+.theme-dark #app-user .user-actions a:focus {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.theme-dark #app-nav li a {
+    border-color: #1b1c1d;
+    color: #bebfbf;
+}
+
+.theme-dark #app-nav li a:hover,
+.theme-dark #app-nav li a:focus {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.theme-dark #app-nav li a.active {
+    background: rgba(255, 255, 255, 0.02);
+    border-left-color: #009386;
+}
+
+.theme-dark #settingsModal .settings-sidebar {
+    background: #23282b;
+    border-color: #1b1c1d;
+}
+
+    .theme-dark #settingsModal .settings-sidebar .header {
+        border-color: #1b1c1d;
+    }
+
+    .theme-dark #settingsModal .settings-sidebar li a {
+        color: #808484;
+    }
+
+        .theme-dark #settingsModal .settings-sidebar li a:hover,
+        .theme-dark #settingsModal .settings-sidebar li a:focus {
+            color: #bebfbf;
+            border-color: rgba(0, 147, 134, 0.5);
+        }
+
+        .theme-dark #settingsModal .settings-sidebar li.active a {
+            color: #bebfbf;
+            border-color: #009386;
+        }
+
+.theme-dark #settingsModal .settings-content {
+    border-color: #1b1c1d;
+}
+
+    .theme-dark #settingsModal .settings-content .tabFooter {
+        border-top-color: #354144;
+    }
+
+.theme-dark #app-topbar {
+    background: #23282b;
+    border-color: #1b1c1d;
+}
+
+.theme-dark #app-topbar a {
+    border-color: #1b1c1d !important;
+    color: #bebfbf;
+}
+
+.theme-dark #app-topbar a:hover,
+.theme-dark #app-topbar a:focus {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.theme-dark .page-header {
+    border-color: #354144;
+}
+
+.theme-dark commandline #command-output {
+    border-color: #1b1c1d;
+    background: #30363a;
+    color: #abb2bf;
+}
+
+.theme-dark commandline .syntax .invoke {
+    color: #e45649; /* red 1 */
+}
+
+.theme-dark commandline .syntax .method {
+    color: #c678dd; /* purple */
+}
+
+.theme-dark commandline .syntax .brace,
+.theme-dark commandline .syntax .comma {
+    color: #abb2bf; /* default text */
+}
+
+.theme-dark commandline .syntax .variable {
+    color: #61afef; /* blue */
+}
+
+.theme-dark commandline .syntax .digit {
+    color: #d19a66; /* orange 1 */
+}
+
+.theme-dark commandline .syntax .string {
+    color: #98c379; /* green */
+}
+
+.theme-dark commandline #command-input .input-area {
+    background: #333b3e;
+    border-color: #424f52;
+}
+
+.theme-dark commandline #command-input .input-area .reference-modal a,
+.theme-dark commandline #command-input .input-area .submit-button a {
+    border-color: #424f52;
+    color: #bebfbf;
+}
+
+    .theme-dark commandline #command-input .input-area .reference-modal a:hover,
+    .theme-dark commandline #command-input .input-area .reference-modal a:focus {
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .theme-dark commandline #command-input .input-area .submit-button a:hover,
+    .theme-dark commandline #command-input .input-area .submit-button a:focus {
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+.theme-dark commandline #command-input .input-area .input-field input {
+    background: none;
+}
+
+.theme-dark commandline #command-input .input-area .input-field input:focus {
+
+}
+
+.theme-dark commandline ::-webkit-input-placeholder {
+   color: #58676b;
+}
+
+.theme-dark commandline :-moz-placeholder {
+   color: #58676b;
+}
+
+.theme-dark commandline ::-moz-placeholder {
+   color: #58676b;
+}
+
+.theme-dark commandline :-ms-input-placeholder {
+   color: #58676b;
+}
+
+.theme-dark commandline #command-status {
+    color: #58676b;
+}
+
+.theme-dark practiceschedules #schedule-list {
+    background: #30363a;
+    border-color: #1b1c1d;
+    color: #abb2bf;
+}
+
+.theme-dark practiceschedules #schedule-list .table>tbody>tr>td {
+    border-color: #1b1c1d;
+}
+
+.theme-dark practiceschedules #addScheduleModal .modal-body .alert.alert-danger,
+.theme-dark practiceschedules #editScheduleModal .modal-body .alert.alert-danger {
+    background-color: #332828;
+    border-color: #291919;
+}
+
+.theme-dark practiceschedules #addScheduleModal .modal-header,
+.theme-dark practiceschedules #editScheduleModal .modal-header {
+    border-color: #1b1c1d;
+}
+
+.theme-dark practiceschedules #addScheduleModal .modal-footer,
+.theme-dark practiceschedules #editScheduleModal .modal-footer {
+    border-color: #1b1c1d;
+}
+
+.theme-dark practiceschedules #addScheduleModal #newScheduleSettings,
+.theme-dark practiceschedules #editScheduleModal #editScheduleSettings {
+    border-color: #1b1c1d;
+}
+
+.theme-dark practiceschedules #addScheduleModal #newScheduleQuestions .scheduleQuestion,
+.theme-dark practiceschedules #editScheduleModal #editScheduleQuestions .scheduleQuestion {
+    background-color: #23282b;
+    border-color: #1b1c1d;
+}
+
+.theme-dark practiceschedules #addScheduleModal #newScheduleQuestions .scheduleQuestion h5,
+.theme-dark practiceschedules #editScheduleModal #editScheduleQuestions .scheduleQuestion h5 {
+    border-color: #1b1c1d;
+}
+
+.theme-dark practiceschedules #addScheduleModal #newScheduleQuestions .scheduleQuestion a.removeQuestion,
+.theme-dark practiceschedules #editScheduleModal #editScheduleQuestions .scheduleQuestion a.removeQuestion {
+    color: #bebfbf;
+    cursor: pointer;
+}
+
+.theme-dark practiceschedules #addScheduleModal #newScheduleQuestions .scheduleQuestion a.removeQuestion:hover,
+.theme-dark practiceschedules #addScheduleModal #newScheduleQuestions .scheduleQuestion a.removeQuestion:focus,
+.theme-dark practiceschedules #editScheduleModal #editScheduleQuestions .scheduleQuestion a.removeQuestion:hover,
+.theme-dark practiceschedules #editScheduleModal #editScheduleQuestions .scheduleQuestion a.removeQuestion:focus {
+    color: #bebfbf;
+}
+
+.theme-dark practiceschedules #playScheduleModal {
+    background: #282f33;
+}
+
+.theme-dark practiceschedules #playScheduleModal .playScheduleTop #scheduleDetails {
+    color: #8e969a;
+}
+
+.theme-dark practiceschedules #playScheduleModal .playScheduleTop #scheduleClose {
+    color: #dadada;
+}
+
+.theme-dark practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer {
+    border-color: #354144;
+}
+
+.theme-dark practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer ul.rating li a.star,
+.theme-dark practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qrating ul.rating .star {
+    color: #354144;
+}
+
+.theme-dark practiceschedules #playScheduleModal #playScheduleContent #scheduleAnswer ul.rating li a.star.lit,
+.theme-dark practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qrating ul.rating .star.lit {
+    color: #daa520;
+}
+
+.theme-dark practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qid,
+.theme-dark practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qtype,
+.theme-dark practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .question,
+.theme-dark practiceschedules #playScheduleModal #playScheduleResults #scheduleResultTable .resultsTable .qrating {
+    border-color: #354144;
+}
+
+/** ===========================================================================
+ * Light Theme
+ */
+.theme-light ::-webkit-scrollbar-thumb {
+    background: #4b647d;
+}
+
+.theme-light ::-webkit-scrollbar-track {
+    background: #1a242f;
+}
+
+.theme-light {
+    scrollbar-face-color: #4b647d;
+    scrollbar-track-color: #1a242f;
+}
+
+.theme-light .main-view {
+    background: #fafafa;
+    color: #1b1d1f;
+}
+
+.theme-light #app-sidebar {
+    background: #2c3e50;
+    border-color: #1a242f;
+}
+
+.theme-light #app-sidebar .app-logo {
+    border-color: #1a242f;
+}
+
+.theme-light #app-nav li a {
+    border-color: #1a242f;
+    color: #e5e5e5;
+}
+
+.theme-light #app-nav li a:hover,
+.theme-light .app-nar li a:focus {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.theme-light #app-nav li a.active {
+    background: rgba(255, 255, 255, 0.02);
+    border-left-color: #009386;
+}
+
+.theme-light #app-topbar {
+    background: #2c3e50;
+    border-color: #1a242f;
+}
+
+.theme-light #app-topbar a {
+    border-color: #1a242f !important;
+    color: #bebfbf;
+}
+
+.theme-light #app-topbar a:hover,
+.theme-light #app-topbar a:focus {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.theme-light .page-header {
+    border-color: #bfbfbf;
+}
+
+.theme-light commandline #command-toolbar ul li a {
+    background: #4b647d;
+    border-color: #2c3e50;
+    color: #e5e5e5;
+}
+
+    .theme-light commandline #command-toolbar ul li a:hover,
+    .theme-light commandline #command-toolbar ul li a:focus {
+        background: #39536d;
+    }
+
+.theme-light commandline #command-output {
+    border-color: #2c3e50;
+    background: #e9eef1;
+    color: #383a42;
+}
+
+.theme-light commandline .syntax .invoke {
+    color: #e45649; /* red 1 */
+}
+
+.theme-light commandline .syntax .method {
+    color: #a626a4; /* purple */
+}
+
+.theme-light commandline .syntax .brace,
+.theme-light commandline .syntax .comma {
+    color: #383a42; /* default text */
+}
+
+.theme-light commandline .syntax .variable {
+    color: #4078f2; /* blue */
+}
+
+.theme-light commandline .syntax .digit {
+    color: #986801; /* orange 1 */
+}
+
+.theme-light commandline .syntax .string {
+    color: #54a752; /* green */
+}
+
+.theme-light commandline #command-input .input-area {
+    background: #b4c3cc;
+    border-color: #556067;
+}
+
+.theme-light commandline #command-input .input-area .reference-modal a,
+.theme-light commandline #command-input .input-area .submit-button a {
+    border-color: #556067;
+    color: #59686d;
+}
+
+    .theme-light commandline #command-input .input-area .reference-modal a:hover,
+    .theme-light commandline #command-input .input-area .reference-modal a:focus {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .theme-light commandline #command-input .input-area .submit-button a:hover,
+    .theme-light commandline #command-input .input-area .submit-button a:focus {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+.theme-light commandline #command-input .input-area .input-field input {
+    background: none;
+}
+
+.theme-light commandline #command-input .input-area .input-field input:focus {
+
+}
+
+.theme-light commandline ::-webkit-input-placeholder {
+   color: #59686d;
+}
+
+.theme-light commandline :-moz-placeholder {
+   color: #59686d;
+}
+
+.theme-light commandline ::-moz-placeholder {
+   color: #59686d;
+}
+
+.theme-light commandline :-ms-input-placeholder {
+   color: #59686d;
+}
+
+.theme-dark commandline #command-status {
+    color: #59686d;
+}

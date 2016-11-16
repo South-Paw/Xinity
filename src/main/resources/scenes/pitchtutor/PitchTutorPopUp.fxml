@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.pitchtutor.PitchTutorPopUpController">
+    <children>
+        <Text fx:id="notePairsTitle" layoutX="19.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Note Pairs" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="12.0" />
+        <TextField fx:id="notePairsTextField" layoutX="216.0" layoutY="12.0" prefHeight="25.0" prefWidth="139.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0" />
+        <Text fx:id="noteRangeTitle" layoutX="19.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note Range" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="49.0" />
+        <TextField fx:id="noteRangeTextFieldOne" layoutX="216.0" layoutY="49.0" prefHeight="25.0" prefWidth="65.0" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="49.0" />
+        <TextField fx:id="noteRangeTextFieldTwo" layoutX="273.0" layoutY="51.0" prefHeight="25.0" prefWidth="65.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="49.0" />
+        <Button fx:id="startTestButton" layoutX="216.0" layoutY="93.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="63.0" text="Start" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="216.0" />
+        <Text fx:id="invalidValueText" disable="true" fill="#e80404" layoutX="13.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Text>
+       <Button fx:id="cancelButton" layoutX="269.0" layoutY="93.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="69.0" text="Cancel" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="12.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,45 @@
+<div id="login-root" class="container">
+    <img class="xinity-logo-img" src="content/img/xinity.png" alt="Xinity Logo" />
+
+    <form class="signin-form" id="signinForm" ng-submit="doLogin()">
+        <h2 class="signin-heading">Please Sign in</h2>
+
+        <label class="sr-only" for="inputUsername">Username</label>
+        <input class="form-control" id="inputUsername" ng-model="user.username" type="text" placeholder="Username" required autofocus>
+
+        <label class="sr-only" for="inputPassword">Password</label>
+        <input class="form-control" id="inputPassword" ng-model="user.password" type="password" placeholder="Password" required>
+
+        <p class="text-danger" ng-show="loginError"><i class="fa fa-exclamation-triangle"></i> {{ loginError }}</p>
+
+        <button class="btn btn-lg btn-xinity btn-block" id="signinButton" type="submit">Sign in</button>
+
+        <a class="create-account" ng-click="showRegistration()">...or Create an Account</a>
+    </form>
+
+    <form class="registration-form" id="registrationForm" ng-submit="doRegistration()" style="display: none;">
+        <h2 class="registration-heading">Create an Account</h2>
+
+		<label class="sr-only" for="signupUsername">Username</label>
+		<input class="form-control" id="signupUsername" ng-model="signup.username" type="text" placeholder="Username" required autofocus>
+
+		<label class="sr-only" for="signupPassword">Password</label>
+		<input class="form-control" id="signupPassword" ng-model="signup.password" type="password" placeholder="Password" required>
+
+        <p><a class="more-details" ng-click="showExtraDetails()">Add some more details?</a></p>
+
+        <div id="extraDetails" style="display: none;">
+			<label class="sr-only" for="signupName">Your Name</label>
+			<input class="form-control" id="signupName" ng-model="signup.name" type="text" placeholder="Your Name">
+
+			<label class="sr-only" for="signupEmail">Email Address</label>
+			<input class="form-control" id="signupEmail" ng-model="signup.email" type="text" placeholder="Email Address">
+        </div>
+
+        <p class="text-danger" ng-show="registrationError"><i class="fa fa-exclamation-triangle"></i> {{ registrationError }}</p>
+
+        <button class="btn btn-lg btn-xinity btn-block" type="submit" id="registrationButton">Register</button>
+
+        <a class="already-have-account" ng-click="hideRegistration()">...or Sign in</a>
+    </form>
+</div>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.scaletutor.ScaleTutorPopUpController">
+    <children>
+        <TextField fx:id="noOfScalesTextField" layoutX="216.0" layoutY="12.0" prefHeight="26.0" prefWidth="158.0" text="1" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="12.0" />
+        <ComboBox fx:id="scaleDirectionComboBox" layoutX="216.0" layoutY="49.0" prefHeight="26.0" prefWidth="173.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="49.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Up" />
+                    <String fx:value="Down" />
+                    <String fx:value="Both" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Up" />
+            </value>
+        </ComboBox>
+        <TextField fx:id="noOfOctavesTextField" layoutX="216.0" layoutY="86.0" prefHeight="26.0" prefWidth="173.0" text="1" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="86.0" />
+        <Text fx:id="noOfScalesTitle" layoutX="11.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of scales" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="18.0" />
+        <Text fx:id="scaleDirectionTitle" layoutX="11.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scale direction" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="55.0" />
+        <Text fx:id="noOfOctavesTitle" layoutX="12.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of octaves" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="90.05078125" />
+        <Text fx:id="invalidValueText" disable="true" fill="#e80404" layoutX="13.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font size="12.0" />
+            </font>
+        </Text>
+        <ComboBox fx:id="playStyleDropDown" layoutX="216.0" layoutY="124.0" prefHeight="26.0" prefWidth="173.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="20.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Straight" />
+                    <String fx:value="Swing" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Straight" />
+            </value>
+        </ComboBox>
+        <Text fx:id="playStyleTitle" layoutX="12.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Play Style" />
+        <CheckBox fx:id="modeCheckBox" layoutX="217.0" layoutY="159.0" mnemonicParsing="false" text="Scale Modes" />
+      <CheckBox fx:id="harmonicCheckBox" layoutX="217.0" layoutY="185.0" mnemonicParsing="false" text="Harmonic Minor Scales" />
+
+        <Button fx:id="startTestButton" layoutX="216.0" layoutY="167.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="25.0" prefWidth="77.0" text="Start" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="216.0" />
+
+        <Button fx:id="cancelButton" layoutX="319.0" layoutY="210.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="26.0" prefWidth="77.0" text="Cancel" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="20.0" />
+    </children>
+</AnchorPane>

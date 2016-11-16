@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.pitchtutor.PitchQuestionController">
+    <children>
+        <AnchorPane layoutX="3.0" layoutY="3.0" prefHeight="40.0" prefWidth="534.0" style="-fx-border-color: rgba(0,0,0,0.3); -fx-border-style: solid; fx-border-radius: 2; -fx-border-width: 1;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+            <children>
+                <Text fx:id="testNumberText" layoutX="7.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                <Button fx:id="playTestButton" layoutX="89.0" layoutY="8.0" mnemonicParsing="false" onAction="#playButtonPressed" text="Play" AnchorPane.leftAnchor="90.0" />
+                <Text layoutX="143.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The second note was" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="253.0" />
+                <ChoiceBox fx:id="pitchChoiceDropDown" disable="true" layoutX="287.0" layoutY="8.0" prefHeight="25.0" prefWidth="115.0" AnchorPane.leftAnchor="286.0" />
+                <Button fx:id="checkAnswerButton" disable="true" layoutX="408.0" layoutY="8.0" mnemonicParsing="false" onAction="#checkButtonPressed" text="Check" AnchorPane.leftAnchor="408.0" />
+                <Text fx:id="answerText" layoutX="471.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="471.0" />
+                <Text fx:id="giveAnswerText" layoutX="543.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="543.0">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </Text>
+                <Button fx:id="nextButton" disable="true" layoutX="477.0" layoutY="7.0" mnemonicParsing="false" onAction="#nextButtonPressed" text="Next" AnchorPane.rightAnchor="8.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

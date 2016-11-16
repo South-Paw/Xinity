@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPress" onKeyReleased="#handleKeyRelease" prefHeight="515.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng302.controllers.keyboard.KeyboardSceneController">
+    <children>
+        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="791.0" minWidth="10.0" prefWidth="548.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="518.0" minWidth="10.0" prefWidth="395.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="143.0" minHeight="-Infinity" prefHeight="100.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints maxHeight="496.0" minHeight="10.0" prefHeight="374.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="42.0" minHeight="-Infinity" prefHeight="41.0" vgrow="NEVER" />
+            </rowConstraints>
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="980.0" width="70.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="882.0" width="98.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="784.0" width="98.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="686.0" width="98.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="588.0" width="98.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="490.0" width="98.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="392.0" width="98.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="294.0" width="98.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="196.0" width="98.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" translateX="98.0" width="98.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4f5153" height="72.0" layoutX="10.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="98.0" />
+                    <Button fx:id="enterSelectedButton" mnemonicParsing="false" onAction="#buttonClicked" text="Enter Selected" translateX="-12.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Button fx:id="clearSelectedButton" mnemonicParsing="false" onAction="#buttonClicked" text="Clear Selected" translateX="-138.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="enharmonicDropDown" onAction="#enharmonicDropDownSelection" prefWidth="108.0" translateX="106.0" GridPane.rowIndex="2">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Default" />
+                                <String fx:value="Lower" />
+                                <String fx:value="Higher" />
+                            </FXCollections>
+                        </items>
+                        <value>
+                            <String fx:value="Default" />
+                        </value>
+                    </ComboBox>
+                    <Label text="Enharmonics" translateX="12.0" GridPane.rowIndex="2" />
+                    <Label text="Note Labels" translateX="229.0" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="noteLabelsDropDown" onAction="#noteLabelsDropDownSelection" prefWidth="108.0" translateX="318.0" GridPane.rowIndex="2">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="None" />
+                                <String fx:value="Always" />
+                                <String fx:value="On Click" />
+                            </FXCollections>
+                        </items>
+                        <value>
+                            <String fx:value="None" />
+                        </value>
+                    </ComboBox>
+                <ScrollPane fx:id="keyboardScrollPane" prefHeight="378.0" prefWidth="1050.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                <Rectangle fx:id="viewRectangle" arcHeight="5.0" arcWidth="5.0" fill="#d7c9c9" height="90.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="196.0" GridPane.columnSpan="2" />
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" textAlignment="CENTER" wrappingWidth="97.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" translateX="98.0" wrappingWidth="97.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" translateX="196.0" wrappingWidth="97.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" translateX="294.0" wrappingWidth="97.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" translateX="392.0" wrappingWidth="97.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="CENTER" translateX="490.0" wrappingWidth="97.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER" translateX="588.0" wrappingWidth="97.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER" translateX="686.0" wrappingWidth="97.13671875">
+                    <font>
+                       <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="CENTER" translateX="784.0" wrappingWidth="97.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER" translateX="882.0" wrappingWidth="97.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="10.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="CENTER" translateX="980.0" wrappingWidth="70.13671875">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <CheckBox fx:id="inputCheckBox" onAction="#handleCheckButtons" contentDisplay="TOP" graphicTextGap="5.0" mnemonicParsing="false" selected="true" text="Input" translateX="-263.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <CheckBox fx:id="muteCheckBox" onAction="#handleCheckButtons" mnemonicParsing="false" text="Mute" translateX="-333.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>
