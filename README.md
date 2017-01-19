@@ -41,11 +41,11 @@ Please check out the sprint [release tags](https://github.com/South-Paw/Xinity/r
 Each has an attached jars of the sprint's release. They're a pretty good indication of how far we came.
 
 ## Project Contributors
-* [Adam Hunt](https://github.com/PolarBear505)
+* [Adam Hunt](https://github.com/KiwiPolarBear)
 * [Alex Gabites](https://github.com/South-Paw)
 * Jono Smythe
 * Liam McKee
-* Liam McKee
+* Matthew Jensen
 * Peter Roger
 * [William Scott](https://github.com/babycat)
 
